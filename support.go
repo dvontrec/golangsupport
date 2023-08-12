@@ -17,7 +17,6 @@ func PrintArray(arr []int){
 }
 
 func CreateRandomArray(length int) []int{
-	fmt.Println("updating with rqandoms")
 	arr := []int{}
 	index := 0
 	for index <= length {
@@ -30,6 +29,6 @@ func CreateRandomArray(length int) []int{
 func GenerateRandomNumber() int {
 	s1 := rand.NewSource(time.Now().UnixNano())
     r1 := rand.New(s1)
-	return r1.Int()
+	return r1.Intn(100)
 }
 	
