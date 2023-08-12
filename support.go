@@ -17,6 +17,7 @@ func PrintArray(arr []int){
 }
 
 func CreateRandomArray(length int) []int{
+	fmt.Println("updating with rqandoms")
 	arr := []int{}
 	index := 0
 	for index <= length {
