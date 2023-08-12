@@ -1,6 +1,10 @@
 package support
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+	"math/rand"
+)
 
 func GetEvens(arr []int){
 	fmt.Printf("we got an array %d", arr[0])
@@ -16,17 +20,15 @@ func CreateRandomArray(length int) []int{
 	arr := []int{}
 	index := 0
 	for index <= length {
-		arr = append(arr, index)
+		arr = append(arr, GenerateRandomNumber())
 		index += 1
 	}
 	return arr
 }
 
-func main(){
-	fmt.Println("hello cruel world")
-	nums := CreateRandomArray(13)
-	PrintArray(nums)
-	GetEvens(nums)
+func GenerateRandomNumber() int {
+	s1 := rand.NewSource(time.Now().UnixNano())
+    r1 := rand.New(s1)
+	return r1.Int()
 }
-	
 	
